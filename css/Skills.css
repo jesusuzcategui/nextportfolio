@@ -1,0 +1,46 @@
+.skill_logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 1rem auto;
+}
+
+.brand_logo {
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
+    margin: 1rem auto;
+    background: rgb(255,255,255);
+    background: -moz-radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(203,203,203,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(203,203,203,1) 100%);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(203,203,203,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#cbcbcb",GradientType=1);
+    padding: 0 1rem;
+    display: block;
+}
+
+.skill_item {
+    border: none;
+}
+
+.slick-arrow {
+    background-color: #000 !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50px;
+}
+
+.slick-prev {
+    left: -50px !important;
+}
+
+.slick-next {
+    right: -50px !important;
+}
+
+.footer {
+    background-color: rgb(39, 39, 39);
+    margin: 3rem 0 0;
+    padding: 1rem 0;
+    color: #fff;
+}
