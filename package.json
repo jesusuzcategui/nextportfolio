@@ -3,8 +3,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export" : "next build && next export",
-    "start": "next start"
+    "export": "next build && next export",
+    "start": "next start",
+    "nextversion": "next -v"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.2",
