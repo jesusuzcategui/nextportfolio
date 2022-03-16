@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Container } from '@mui/material';
-
 import { FindSkills } from '../Services/ContentFull';
+import Presentacion from '../Componentes/Presentacion';
+import Skills from '../Componentes/Skills';
 
 const IndexPage = () => {
 
@@ -10,20 +11,23 @@ const IndexPage = () => {
 
     const fetchData = async () => {
         const [status, data] = await FindSkills();
-        setSkills(data.data);
+        setSkills(data.data.skillCollection.items);
     };
 
-    useEffect( () => {
+    useEffect(() => {
         fetchData();
-    }, [skill] );
+    }, []);
 
 
     return (
         <>
+            <Presentacion />
             <Container maxWidth="md">
-                <pre>
-                    {JSON.stringify(skill, '', 1)}
-                </pre>
+                {(skill) && (
+                    <div>
+                        <Skills data={skill} />
+                    </div>
+                )}
             </Container>
         </>
     );
