@@ -16,8 +16,8 @@ const HeaderApp = () => {
                             Jesús Uzcátegui
                         </Typography>
                         <Button component={RouterLink} to="/" color="inherit">Home</Button>
+                        <Button component={RouterLink} to="/blog" color="inherit">Blog</Button>
                         <Button component={RouterLink} to="/about" color="inherit">About</Button>
-                        <Button component={RouterLink} to="/contact" color="inherit">Contact</Button>
                     </Toolbar>
                 </AppBar>
             </Box>

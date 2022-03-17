@@ -7,7 +7,7 @@ const Presentacion = () => {
         <>
             <Box className={"gradientBlueDark"} sx={{
                 width: "100%",
-                height: "400px",
+                height: "425px",
                 display: "flex",
                 alignItems: "center",
                 padding: "0px 2rem"

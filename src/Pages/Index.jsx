@@ -3,6 +3,7 @@ import { Container } from '@mui/material';
 import { FindSkills } from '../Services/ContentFull';
 import Presentacion from '../Componentes/Presentacion';
 import Skills from '../Componentes/Skills';
+import LastPost from '../Componentes/LastPost';
 
 const IndexPage = () => {
 
@@ -28,6 +29,8 @@ const IndexPage = () => {
                         <Skills data={skill} />
                     </div>
                 )}
+
+                <LastPost />
             </Container>
         </>
     );
