@@ -28,16 +28,16 @@ const Blog = () => {
 
     return (
         <>
-            <Container maxWidth="md">
+            <Container maxWidth="lg">
                 <Typography sx={{}} align='center' variant="h2" component="div">
                     Blog
                 </Typography>
                 {(articles) && (articles.length > 0) && (
                     <Box>
-                        <Grid  columnGap={3} sx={{ my: "3rem" }} container>
+                        <Grid  columnSpacing={3} sx={{ my: "3rem" }} container>
                             {articles.map((item) => {
                                 return (
-                                    <Grid key={item.sys.id} item xs={12} md={4}>
+                                    <Grid key={item.sys.id} item xs={12} md={6}>
                                         <Card>
                                             <CardMedia
                                                 component="img"

@@ -79,6 +79,41 @@ const FindBlog = async (limit = 15) => {
   }
 };
 
+const FindByWords = async (q) => {
+  try {
+    const query = `
+    {
+      blogCollection(where: {
+        title_contains: "${q}"
+      }){
+        items {
+          title,
+          imagen {
+            url
+          },
+          sys {
+            id,
+            publishedAt
+          }
+        }
+      }
+    }`;
+
+    let response = null;
+    const { status, data } = await axios.post(UrlConnection, JSON.stringify({ query }), {
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": AccessToken
+      }
+    });
+
+    response = [status, data];
+
+    return response;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
 
 const FindArticle = async (id = null) => {
   try {
@@ -120,4 +155,4 @@ const FindArticle = async (id = null) => {
   }
 };
 
-export { FindSkills, FindBlog, FindArticle };
+export { FindSkills, FindBlog, FindArticle, FindByWords };

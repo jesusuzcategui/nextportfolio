@@ -24,7 +24,7 @@ const Article = () => {
 
     return (
         <>
-            <Container sx={{ my: "2rem" }} maxWidth="md">
+            <Container sx={{ my: "2rem" }} maxWidth="lg">
                 {(article) && (
                     <Box>
                         <Typography sx={{}} align='center' variant="h3" component="div">

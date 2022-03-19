@@ -31,10 +31,10 @@ const LastPost = () => {
             <Typography sx={{ my: "1.5rem" }} align='center' variant="h4" component="div">
                 Last posts
             </Typography>
-            <Grid sx={{ my: "3rem" }} container columnGap={3}>
+            <Grid sx={{ my: "3rem" }} container rowGap={3} columnSpacing={3}>
                 {(lastContent) && (lastContent.length > 0) && (lastContent.map((item, i) => {
                     return (
-                        <Grid item xs={12} md={5}>
+                        <Grid key={item.sys.id} item xs={12} md={6}>
                             <Card>
                                 <CardMedia
                                     component="img"

@@ -48,3 +48,9 @@ code {
   background-image: url('Assets/bg-tech.jpg');
   background-blend-mode: darken;
 }
+
+@media screen and (max-width: 768px){
+  .presentationGrid .MuiGrid-item:nth-child(1) {
+    order: 2;
+  }
+}
