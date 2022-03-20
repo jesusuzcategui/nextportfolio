@@ -36,7 +36,7 @@ const Search = () => {
     return (
         <>
             { /* PANTALLA QUE SALE CUANDO ENTRA A /SEARCH SIN BUSCAR NADA */}
-            {((query === "") && (result === null)) && (
+            {((query === "")) && (
                 <div>
                     <Box className={"gradientBlueDark"} sx={{
                         width: "100%",

@@ -3,12 +3,13 @@ import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, createSearchParams, useNavigate } from 'react-router-dom';
 
 const Searchbar = () => {
 
     const [word, setWord] = useState("");
     const [searchParams] = useSearchParams();
+    const navigate = useNavigate();
 
     useEffect( () => {
         let q = searchParams.get("q");
@@ -20,11 +21,22 @@ const Searchbar = () => {
         setWord(e.target.value);
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        /*navigate({
+            pathname: "/search",
+            search: createSearchParams({
+                q: word
+            }).toString(),
+            replace: true
+        });*/
+        window.location.href = "/search?q=" + word;
+    };
+
     return (
         <>
             <Paper
-                action="/search"
-                method="get"
+                onSubmit={handleSubmit}
                 component="form"
                 sx={{ p: '5px 10px', display: 'flex', alignItems: 'center', width: "100%" }}
             >
