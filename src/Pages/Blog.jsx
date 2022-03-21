@@ -34,11 +34,11 @@ const Blog = () => {
                 </Typography>
                 {(articles) && (articles.length > 0) && (
                     <Box>
-                        <Grid  columnSpacing={3} sx={{ my: "3rem" }} container>
+                        <Grid  rowGap={3} columnSpacing={3} sx={{ my: "3rem" }} container>
                             {articles.map((item) => {
                                 return (
                                     <Grid key={item.sys.id} item xs={12} md={6}>
-                                        <Card>
+                                        <Card variant="outlined">
                                             <CardMedia
                                                 component="img"
                                                 height="200"

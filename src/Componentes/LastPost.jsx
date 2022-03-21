@@ -35,7 +35,7 @@ const LastPost = () => {
                 {(lastContent) && (lastContent.length > 0) && (lastContent.map((item, i) => {
                     return (
                         <Grid key={item.sys.id} item xs={12} md={6}>
-                            <Card>
+                            <Card variant="outlined">
                                 <CardMedia
                                     component="img"
                                     height="200"

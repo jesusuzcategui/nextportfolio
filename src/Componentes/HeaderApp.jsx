@@ -6,6 +6,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Container } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
+import LogoDesktop from '../Assets/Logocompleto.png';
+import LogoMovil from '../Assets/Logoicono.svg.png';
 
 const HeaderApp = () => {
     return (
@@ -14,9 +16,10 @@ const HeaderApp = () => {
                 <AppBar color='secondary' position="static">
                     <Container maxWidth="lg">
                         <Toolbar>
-                            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                                Jesús Uzcátegui
-                            </Typography>
+                            <picture style={{ flexGrow: 1 }}>
+                                <source media="(max-width:768px)" srcSet={LogoMovil} />
+                                <img className="logoheader" src={LogoDesktop} alt="Logo" />
+                            </picture>
                             <Button component={RouterLink} to="/" color="inherit">Home</Button>
                             <Button component={RouterLink} to="/blog" color="inherit">Blog</Button>
                             <Button component={RouterLink} to="/about" color="inherit">About</Button>

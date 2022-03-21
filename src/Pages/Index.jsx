@@ -23,7 +23,7 @@ const IndexPage = () => {
     return (
         <>
             <Presentacion />
-            <Container maxWidth="md">
+            <Container maxWidth="lg">
                 {(skill) && (
                     <div>
                         <Skills data={skill} />

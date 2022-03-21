@@ -50,7 +50,20 @@ code {
 }
 
 @media screen and (max-width: 768px){
+  .logoheader {
+    width: 50px !important;
+    height: 40px;
+    object-fit: contain;
+  }
   .presentationGrid .MuiGrid-item:nth-child(1) {
     order: 2;
   }
+}
+
+.cardWithoutShadow {
+  box-shadow: none !important;
+}
+
+.logoheader {
+  width: 140px;
 }

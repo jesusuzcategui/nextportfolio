@@ -22,7 +22,7 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 const Skill = ({ title, image, porcent }) => {
     return (
         <>
-            <Card>
+            <Card className={"cardWithoutShadow"}>
                 <CardMedia
                     component="img"
                     height="80"
