@@ -21,6 +21,7 @@ const HeaderApp = () => {
                                 <img className="logoheader" src={LogoDesktop} alt="Logo" />
                             </picture>
                             <Button component={RouterLink} to="/" color="inherit">Home</Button>
+                            <Button component={RouterLink} to="/courses" color="inherit">Courses</Button>
                             <Button component={RouterLink} to="/blog" color="inherit">Blog</Button>
                             <Button component={RouterLink} to="/about" color="inherit">About</Button>
                         </Toolbar>
