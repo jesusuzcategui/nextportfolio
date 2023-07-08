@@ -11,11 +11,11 @@ const Skills = ({ data }) => {
     let SliderSetting = {
         dots: false,
         infinite: true,
-        speed: 800,
+        speed: 3000,
         slidesToShow: 6,
         slidesToScroll: 6,
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 4000,
         responsive: [
             {
                 breakpoint: 1024,

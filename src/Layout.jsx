@@ -13,6 +13,7 @@ import Article from './Pages/Article';
 import Search from './Pages/Search';
 import Cursos from './Pages/Cursos';
 import Curso from './Pages/Curso';
+import Project from './Pages/Project';
 
 const Layout = () => {
     return (
@@ -32,6 +33,7 @@ const Layout = () => {
                                 <Route path='/search' element={<Search />} />
                                 <Route path='/courses' element={<Cursos />} />
                                 <Route path='/courses/:id/:slug' element={ <Curso /> } />
+                                <Route path="/project/:slug" element={<Project />} />
                             </Routes>
 
                             <FooterApp />

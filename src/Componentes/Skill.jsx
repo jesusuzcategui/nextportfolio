@@ -28,7 +28,7 @@ const Skill = ({ title, image, porcent }) => {
                     height="80"
                     image={image}
                     alt={title}
-                    style={{objectFit: 'contain'}}
+                    style={{objectFit: 'scale-down', width: '90%'}}
                 />
                 <CardContent>
                     <Typography gutterBottom variant="span" component="div">
