@@ -52,7 +52,15 @@ const LastProjects = ({ data }) => {
             </Typography>
             <Swiper
                 spaceBetween={50}
-                slidesPerView={3}
+                slidesPerView={1}
+                breakpoints={{
+                    640: {
+                       slidesPerView: 1 
+                    },
+                    768: {
+                        slidesPerView: 3
+                    }
+                }}
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
             >
