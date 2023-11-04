@@ -63,6 +63,12 @@ const Blog = () => {
                             })}
                         </Grid>
                     </Box>
+                ) || (
+                    <Box sx={{
+                        padding: '100px 0',
+                    }}>
+                        <Typography variant="h3" align='center'>Articles no found</Typography>
+                    </Box>
                 )}
             </Container>
         </>

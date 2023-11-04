@@ -10,7 +10,6 @@ import { Link as RouterLink } from 'react-router-dom';
 import { useAllPrismicDocumentsByType } from '@prismicio/react';
 
 const Cursos = () => {
-    const [articles, setArticles] = useState([]);
     const [documents, { state, error }] = useAllPrismicDocumentsByType('tutoriales', {
       pageSize: 0,
     });
@@ -58,7 +57,13 @@ const Cursos = () => {
                       })}
                     </Grid>
                   </Box>
-                )}
+                ) || (
+                  <Box sx={{
+                      padding: '100px 0',
+                  }}>
+                      <Typography variant="h3" align='center'>Courses no found</Typography>
+                  </Box>
+              )}
             </Container>
         </>
     );
