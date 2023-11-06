@@ -1,0 +1,17 @@
+:root {
+  --color-background: #E7E7E7;
+  --color-text: #171717;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+@media (prefers-color-scheme: dark) {
+}
+
+body.dark {
+  --color-background: #171717;
+  --color-text: #e7e7e7;
+}
