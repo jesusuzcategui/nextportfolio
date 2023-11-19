@@ -15,10 +15,10 @@ const Blog = () => {
     const getArticles = async () => {
         try {
             const [status, data] = await FindBlog(30);
-            console.log(data);
-            setArticles(data.data.blogCollection.items);
+            console.log("xx", data.data.tutorialsCollection);
+            setArticles(data.data.tutorialsCollection.items);
         } catch (error) {
-            console.log(error);
+            console.log(error);  
         }
     };
 
@@ -37,12 +37,12 @@ const Blog = () => {
                         <Grid  rowGap={3} columnSpacing={3} sx={{ my: "3rem" }} container>
                             {articles.map((item) => {
                                 return (
-                                    <Grid key={item.sys.id} item xs={12} md={6}>
+                                    <Grid key={item.sys.id} item xs={12} md={3}>
                                         <Card variant="outlined">
                                             <CardMedia
                                                 component="img"
                                                 height="200"
-                                                image={item.imagen.url}
+                                                image={item.image.url}
                                                 alt={item.title}
                                                 style={{ objectFit: 'cover' }}
                                             />
@@ -50,12 +50,9 @@ const Blog = () => {
                                                 <Typography gutterBottom variant="h5" component="div">
                                                     {item.title}
                                                 </Typography>
-                                                <Typography gutterBottom variant="p" component="div">
-                                                    {item.metadescripcion}
-                                                </Typography>
                                             </CardContent>
                                             <CardActions>
-                                                <Button component={RouterLink} to={"/blog/"+item.sys.id} color="inherit">Ver</Button>
+                                                <Button component={RouterLink} to={"/blog/"+item.slug} color="inherit">Ver</Button>
                                             </CardActions>
                                         </Card>
                                     </Grid>

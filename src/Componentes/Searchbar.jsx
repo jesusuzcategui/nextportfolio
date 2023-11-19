@@ -9,7 +9,7 @@ const Searchbar = () => {
 
     const [word, setWord] = useState("");
     const [searchParams] = useSearchParams();
-    const navigate = useNavigate();
+    
 
     useEffect( () => {
         let q = searchParams.get("q");
@@ -23,13 +23,6 @@ const Searchbar = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        /*navigate({
-            pathname: "/search",
-            search: createSearchParams({
-                q: word
-            }).toString(),
-            replace: true
-        });*/
         window.location.href = "/search?q=" + word;
     };
 
@@ -43,8 +36,8 @@ const Searchbar = () => {
                 <InputBase
                     name="q"
                     sx={{ ml: 1, flex: 1 }}
-                    placeholder="Search articles"
-                    inputProps={{ 'aria-label': 'search articles' }}
+                    placeholder="Buscar tutoriales"
+                    inputProps={{ 'aria-label': 'buscar tutoriales' }}
                     value={word}
                     onChange={handleChange}
                 />

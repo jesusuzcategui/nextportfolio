@@ -18,7 +18,7 @@ const Search = () => {
         try {
             const [status, data] = await FindByWords(query);
             console.log(data);
-            setResult(data.data.blogCollection.items);
+            setResult(data.data.tutorialsCollection.items);
         } catch (error) {
             setResult(null);
             console.log({ error });
@@ -129,7 +129,7 @@ const Search = () => {
                                         <Card key={item.sys.id} sx={{ display: 'flex', mb: "1rem" }}>
                                             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                                                 <CardContent sx={{ flex: '1 0 auto' }}>
-                                                    <Typography component={Link} to={"/blog/" + item.sys.id} variant="h5">
+                                                    <Typography component={Link} to={"/tutorials/" + item.sys.id} variant="h5">
                                                         {item.title}
                                                     </Typography>
                                                     <Typography variant="subtitle1" color="text.secondary" component="div">
@@ -142,7 +142,7 @@ const Search = () => {
                                             <CardMedia
                                                 component="img"
                                                 sx={{ width: 151 }}
-                                                image={item.imagen.url}
+                                                image={item.image.url}
                                                 alt={item.title}
                                             />
                                         </Card>

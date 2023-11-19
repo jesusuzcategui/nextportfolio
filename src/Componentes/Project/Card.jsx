@@ -12,17 +12,14 @@ const ProjectCard = ({ project }) => {
         <Card variant="outlined">
             <CardMedia
                 component="img"
-                height="200"
+                height="150"
                 image={project.imageCollection.items[0].url}
                 alt={project.title}
                 style={{ objectFit: 'cover' }}
             />
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography sx={{fontSize: '16px', fontWeight: '700'}} gutterBottom variant="h5" component="div">
                     {project.title}
-                </Typography>
-                <Typography gutterBottom variant="p" component="div">
-                    {project.content}
                 </Typography>
             </CardContent>
             <CardActions>

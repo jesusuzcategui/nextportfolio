@@ -47,24 +47,24 @@ const LastProjects = ({ data }) => {
 
     return (
         <Box sx={{ my: "3rem" }}>
-            <Typography sx={{ my: "1.5rem" }} align='center' variant="h4" component="div">
+            <Typography sx={{ my: "1.5rem", fontWeight: '700' }} align='center' variant="h4" component="div">
                 Last projects
             </Typography>
             <Swiper
-                spaceBetween={50}
+                spaceBetween={20}
                 slidesPerView={1}
                 breakpoints={{
                     640: {
                        slidesPerView: 1 
                     },
                     768: {
-                        slidesPerView: 3
+                        slidesPerView: 4
                     }
                 }}
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
             >
-                {(data) && (data.length > 0) && (data.map(item => <SwiperSlide><ProjectCard project={item}  /></SwiperSlide>))}
+                {(data) && (data.length > 0) && (data.map((item, id) => <SwiperSlide key={id}><ProjectCard project={item}  /></SwiperSlide>))}
             </Swiper>
         </Box>
     );

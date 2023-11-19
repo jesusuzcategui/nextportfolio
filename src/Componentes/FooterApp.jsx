@@ -9,7 +9,7 @@ const FooterApp = ( ) => {
         <>
             <footer>
                 <Paper square={true} style={{background: Theme.palette.secondary.main, padding: '2rem 0'}} elevation={2}>
-                    <Typography color='white' align='center' variant='small' component='p'>Portfolio | &copy; {currentYear} - All Right Reserved</Typography>
+                    <Typography color='white' align='center' variant='small' component='p'>Jesus Uzcategui | &copy; {currentYear} - All Right Reserved</Typography>
                 </Paper>
             </footer>
         </>

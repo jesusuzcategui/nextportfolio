@@ -136,30 +136,72 @@ const FindBlog = async (limit = 15) => {
   try {
     const query = `
     {
-      blogCollection(limit: ${limit}, order: sys_publishedAt_DESC) {
+      tutorialsCollection(limit: ${limit}, order: sys_publishedAt_DESC) {
         items {
           sys {
-            id,
+            id
             publishedAt
-          },
-          title,
-          imagen {
+          }
+          slug
+          title
+          image {
             url
-          },
-          metadescripcion,
-          content {
-            json
-          },
+          }
+          contentMark
           contentfulMetadata {
             tags {
-              id,
+              id
               name
             }
           }
-        },
-        total,
-        limit,
+        }
+        total
+        limit
         skip
+      }
+    }`;
+
+    let response = null;
+    const { status, data } = await axios.post(UrlConnection, JSON.stringify({ query }), {
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": AccessToken
+      }
+    });
+
+    response = [status, data];
+
+    return response;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+const FindCourse = async (limit = 15) => {
+  try {
+    const query = `
+    {
+      cursoCollection(limit: ${limit}, order: sys_publishedAt_DESC){
+        items {
+          title
+          slug
+          mainImage {
+            url
+          }
+          sys {
+            id
+            publishedAt
+          }
+          chapterCollection {
+            items {
+              title
+              slug
+              image {
+                url
+              }
+            }
+          }
+        }
       }
     }`;
 
@@ -183,12 +225,12 @@ const FindByWords = async (q) => {
   try {
     const query = `
     {
-      blogCollection(where: {
+      tutorialsCollection(where: {
         title_contains: "${q}"
       }){
         items {
           title,
-          imagen {
+          image {
             url
           },
           sys {
@@ -219,21 +261,21 @@ const FindArticle = async (id = null) => {
   try {
     const query = `
     {
-      blog(id: "${id}"){
-        title,
-        content {
-          json
-        },
+      tutorials(where: {
+        slug: "${id}"
+      }){
+        title
+        contentMark
         sys {
-          publishedAt,
-        },
+          publishedAt
+        }
         contentfulMetadata {
           tags {
-            id, 
+            id 
             name
           }
-        },
-        imagen {
+        }
+        image {
           url
         }
       }
@@ -255,4 +297,4 @@ const FindArticle = async (id = null) => {
   }
 };
 
-export { FindSkills, FindBlog, FindArticle, FindByWords, FindProjects, FindProject };
+export { FindSkills, FindBlog, FindArticle, FindByWords, FindProjects, FindProject, FindCourse };

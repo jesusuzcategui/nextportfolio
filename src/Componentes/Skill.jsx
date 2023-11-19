@@ -34,7 +34,6 @@ const Skill = ({ title, image, porcent }) => {
                     <Typography gutterBottom variant="span" component="div">
                         {title}
                     </Typography>
-                    <BorderLinearProgress variant='determinate' value={porcent} />
                 </CardContent>
             </Card>
         </>

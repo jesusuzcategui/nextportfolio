@@ -47,9 +47,6 @@ const Skills = ({ data }) => {
     return (
         <>
             <Box sx={{my: "3rem"}}>
-                <Typography sx={{my: "1.5rem"}} align='center' variant="h4" component="div">
-                    My Skills
-                </Typography>
                 <Slider {...SliderSetting}>
                     {(data && data.length) && (
                         data.map((item, i) => {

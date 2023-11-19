@@ -24,8 +24,8 @@ const Presentacion = () => {
                             <Typography sx={{}} align='right' variant="p" component="div">
                                 FullStack web developer
                             </Typography>
-                            <Typography sx={{}} align='right' variant="span" component="div">
-                                Hello, I present my portfolio and blog where you will find some interesting articles and courses if you want to learn programming
+                            <Typography sx={{}} align='right' variant="p" component="div">
+                                Hola, te presento mi portfolio y blog donde encontrás algunos artículos y cursos interesantes si quieres aprender programación.
                             </Typography>
                         </Grid>
                     </Grid>

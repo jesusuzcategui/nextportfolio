@@ -34,16 +34,17 @@ const IndexPage = () => {
         <>
             <Presentacion />
             <Container maxWidth="lg">
+
+
+                <LastPost />
                 
+                <LastProjects data={projects} />
+
                 {(skill) && (
                     <div>
                         <Skills data={skill} />
                     </div>
                 )}
-
-                <LastProjects data={projects} />
-
-                <LastPost />
             </Container>
         </>
     );

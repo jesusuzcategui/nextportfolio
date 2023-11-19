@@ -16,7 +16,7 @@ const LastPost = () => {
     const getLastArticles = async () => {
         try {
             const [status, data] = await FindBlog(10);
-            setLastContent(data.data.blogCollection.items);
+            setLastContent(data.data.tutorialsCollection.items);
         } catch (error) {
             throw new Error(error);
         }
@@ -28,27 +28,24 @@ const LastPost = () => {
 
     return (
         <>
-            <Typography sx={{ my: "1.5rem" }} align='center' variant="h4" component="div">
-                Last posts
+            <Typography sx={{ my: "1.5rem", fontWeight: '700' }} align='center' variant="h4" component="div">
+                Últimos tutoriales.
             </Typography>
             <Grid sx={{ my: "3rem" }} container rowGap={3} columnSpacing={3}>
-                {(lastContent) && (lastContent.length > 0) && (lastContent.map((item, i) => {
+                {(lastContent) && (lastContent.length > 0) && (lastContent.map((item) => {
                     return (
-                        <Grid key={item.sys.id} item xs={12} md={6}>
+                        <Grid key={item.sys.id} item xs={12} md={3}>
                             <Card variant="outlined">
                                 <CardMedia
                                     component="img"
-                                    height="200"
-                                    image={item.imagen.url}
+                                    height="150"
+                                    image={item.image.url}
                                     alt={item.title}
                                     style={{ objectFit: 'cover' }}
                                 />
                                 <CardContent>
-                                    <Typography gutterBottom variant="h5" component="div">
+                                    <Typography sx={{fontSize: '16px', fontWeight: '700'}} gutterBottom variant="h5" component="div">
                                         {item.title}
-                                    </Typography>
-                                    <Typography gutterBottom variant="p" component="div">
-                                        {item.metadescripcion}
                                     </Typography>
                                 </CardContent>
                                 <CardActions>

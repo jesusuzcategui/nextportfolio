@@ -14,6 +14,7 @@ import Search from './Pages/Search';
 import Cursos from './Pages/Cursos';
 import Curso from './Pages/Curso';
 import Project from './Pages/Project';
+import Tutorials from './Pages/Tutorials';
 
 const Layout = () => {
     return (
@@ -28,12 +29,12 @@ const Layout = () => {
                             <Routes>
                                 <Route path='/' element={<IndexPage />} />
                                 <Route path='/about' element={<AboutPage />} />
-                                <Route path='/blog' element={<Blog />} />
-                                <Route path='/blog/:id' element={<Article />} />
                                 <Route path='/search' element={<Search />} />
                                 <Route path='/courses' element={<Cursos />} />
                                 <Route path='/courses/:id/:slug' element={ <Curso /> } />
                                 <Route path="/project/:slug" element={<Project />} />
+                                <Route path="/tutorials" element={<Tutorials />} />
+                                <Route path="/tutorials/:slug" element={<Article />} />
                             </Routes>
 
                             <FooterApp />
